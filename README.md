@@ -80,6 +80,7 @@ contact_info_df[['first_name', 'last_name']] = contact_info_df['name'].str.split
 Inspect the four CSV files and sketch an ERD using QuickDBD.
 QuickDBD
 ![quickdbd](https://github.com/omidk414/Crowdfunding_ETL/blob/main/ERD_QuickDBD_diagram/QuickDBD_Code.png)
+
 ERD Diagram
 ![erd](https://github.com/omidk414/Crowdfunding_ETL/blob/main/ERD_QuickDBD_diagram/ERD_Diagram.png)
 
@@ -97,10 +98,13 @@ Create a table schema for each CSV file specifying data types, primary keys, for
 1. Import each CSV file into its corresponding SQL table.
   Contact Table
   ![contact](https://github.com/omidk414/Crowdfunding_ETL/blob/main/Images/contact_table.png)
+
   Category Table
   ![category](https://github.com/omidk414/Crowdfunding_ETL/blob/main/Images/category_table.png)
+  
   Sub-category Table
   ![subcategory](https://github.com/omidk414/Crowdfunding_ETL/blob/main/Images/subcategory_table.png)
+  
   Campaign Table
   ![campaign](https://github.com/omidk414/Crowdfunding_ETL/blob/main/Images/campaign_table.png)
 
