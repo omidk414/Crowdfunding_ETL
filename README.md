@@ -105,7 +105,7 @@ Create a table schema for each CSV file specifying data types, primary keys, for
   ![campaign](https://github.com/omidk414/Crowdfunding_ETL/blob/main/Images/campaign_table.png)
 
 3. Verify that each table has the correct data with SELECT statements.
-![campaign](https://github.com/omidk414/Crowdfunding_ETL/blob/main/Images/crowdfunding_db_schema_combined.png)
+![campaign](https://github.com/omidk414/Crowdfunding_ETL/blob/main/Images/crowdfunding_db_schemata.png)
 
 ### Acknowledgements
 - Study Group Members:
