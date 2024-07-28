@@ -79,33 +79,29 @@ contact_info_df[['first_name', 'last_name']] = contact_info_df['name'].str.split
 ### ERD Sketch
 Inspect the four CSV files and sketch an ERD using QuickDBD.
 QuickDBD
-![quickdbd](https://github.com/omidk414/Crowdfunding_ETL/blob/main/ERD_QuickDBD_diagram/QuickDBD_Code.png)
-
+   ![quickdbd](https://github.com/omidk414/Crowdfunding_ETL/blob/main/ERD_QuickDBD_diagram/QuickDBD_Code.png)
 ERD Diagram
-![erd](https://github.com/omidk414/Crowdfunding_ETL/blob/main/ERD_QuickDBD_diagram/ERD_Diagram.png)
+   ![erd](https://github.com/omidk414/Crowdfunding_ETL/blob/main/ERD_QuickDBD_diagram/ERD_Diagram.png)
 
 ### Database Schema
 Create a table schema for each CSV file specifying data types, primary keys, foreign keys, and other constraints. Save the schema as `crowdfunding_db_schema.sql`.
 
 ### Postgres Database and Table Creation
 1. Create a new PostgreSQL database named `crowdfunding_db`.
-![Crowdfunding_db](https://github.com/omidk414/Crowdfunding_ETL/blob/main/Images/Crowdfunding_db.png)
+   ![Crowdfunding_db](https://github.com/omidk414/Crowdfunding_ETL/blob/main/Images/Crowdfunding_db.png)
    
 3. Use the database schema to create tables in the correct order to handle foreign keys.
 4. Verify table creation with SELECT statements.
 
 ## Data Import
 1. Import each CSV file into its corresponding SQL table.
-  Contact Table
+Contact Table
   ![contact](https://github.com/omidk414/Crowdfunding_ETL/blob/main/Images/contact_table.png)
-
-  Category Table
-  ![category](https://github.com/omidk414/Crowdfunding_ETL/blob/main/Images/category_table.png)
-  
-  Sub-category Table
+Category Table
+  ![category](https://github.com/omidk414/Crowdfunding_ETL/blob/main/Images/category_table.png)  
+Sub-category Table
   ![subcategory](https://github.com/omidk414/Crowdfunding_ETL/blob/main/Images/subcategory_table.png)
-  
-  Campaign Table
+Campaign Table
   ![campaign](https://github.com/omidk414/Crowdfunding_ETL/blob/main/Images/campaign_table.png)
 
 3. Verify that each table has the correct data with SELECT statements.
