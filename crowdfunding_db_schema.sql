@@ -1,48 +1,31 @@
 -- Drop existing tables if they exist 
-DROP TABLE IF EXISTS contacts;
-DROP TABLE IF EXISTS category;
-DROP TABLE IF EXISTS subcategory;
-DROP TABLE IF EXISTS campaign;
+DROP TABLE IF EXISTS campaign CASCADE;
+DROP TABLE IF EXISTS contacts CASCADE;
+DROP TABLE IF EXISTS category CASCADE;
+DROP TABLE IF EXISTS subcategory CASCADE;
 
--- Create the contacts table
--- This table stores information about individuals or organizations
-CREATE TABLE contacts(
-    contact_id INT PRIMARY KEY,
+CREATE TABLE category (
+    category_id VARCHAR(50) NOT NULL,
+    category VARCHAR(50) NOT NULL,
+    CONSTRAINT pk_category PRIMARY KEY (category_id)
+);
+
+CREATE TABLE subcategory (
+    subcategory_id VARCHAR(50) NOT NULL,
+    subcategory VARCHAR(50) NOT NULL,
+    CONSTRAINT pk_subcategory PRIMARY KEY (subcategory_id)
+);
+
+CREATE TABLE contacts (
+    contact_id INT NOT NULL,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
-    email VARCHAR(50) NOT NULL
+    email VARCHAR(50) NOT NULL,
+    CONSTRAINT pk_contacts PRIMARY KEY (contact_id)
 );
 
--- Select all records from the contacts table to verify its creation
-SELECT * 
-FROM contacts;
-
--- Create the category table
--- This table holds the primary categories for organizing contacts, campaigns, or other entities
-CREATE TABLE category(
-    category_id VARCHAR(50) PRIMARY KEY,
-    category VARCHAR(50) NOT NULL
-);
-
--- Select all records from the category table to verify its creation
-SELECT * 
-FROM category;
-
--- Create the subcategory table
--- This table provides more granular classification under each primary category
-CREATE TABLE subcategory(
-    subcategory_id VARCHAR(50) PRIMARY KEY,
-    subcategory VARCHAR(50) NOT NULL
-);
-
--- Select all records from the subcategory table to verify its creation
-SELECT * 
-FROM subcategory;
-
--- Create the campaign table
--- This table stores information about different campaigns, which may involve multiple contacts
-CREATE TABLE campaign(
-    cf_id INT PRIMARY KEY,
+CREATE TABLE campaign (
+    cf_id INT NOT NULL,
     contact_id INT NOT NULL,
     company_name VARCHAR(50) NOT NULL,
     description TEXT NOT NULL,
@@ -55,9 +38,28 @@ CREATE TABLE campaign(
     launched_date DATE NOT NULL,
     end_date DATE NOT NULL,
     category_id VARCHAR(50) NOT NULL,
-    subcategory_id VARCHAR(50) NOT NULL
+    subcategory_id VARCHAR(50) NOT NULL,
+    CONSTRAINT pk_campaign PRIMARY KEY (cf_id)
 );
 
--- Select all records from the campaign table to verify its creation
+ALTER TABLE campaign ADD CONSTRAINT fk_campaign_contact_id FOREIGN KEY(contact_id)
+REFERENCES contacts (contact_id);
+
+ALTER TABLE campaign ADD CONSTRAINT fk_campaign_category_id FOREIGN KEY(category_id)
+REFERENCES category (category_id);
+
+ALTER TABLE campaign ADD CONSTRAINT fk_campaign_subcategory_id FOREIGN KEY(subcategory_id)
+REFERENCES subcategory (subcategory_id);
+
+-- Verify table creation
+SELECT * 
+FROM category;
+
+SELECT * 
+FROM subcategory;
+
+SELECT *
+FROM contacts;
+
 SELECT * 
 FROM campaign;
