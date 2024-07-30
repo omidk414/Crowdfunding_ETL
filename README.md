@@ -60,9 +60,8 @@ subcategory_df = pd.DataFrame({"subcategory_id": sub_cat_ids, "subcategory": sub
 3. Export the Campaign DataFrame as `campaign.csv`.
 
 ### Contacts DataFrame
-Choose one of the following options for extracting and transforming the data from `contacts.xlsx`:
 
-#### Using Python Dictionary Methods
+#### Using Python Dictionary Methods for extracting and transforming the data from `contacts.xlsx`:
 1. Import `contacts.xlsx` into a DataFrame.
 2. Iterate through the DataFrame, converting each row to a dictionary.
 3. Extract dictionary values using a Python list comprehension.
@@ -106,6 +105,8 @@ Create a table schema for each CSV file specifying data types, primary keys, for
 
 3. Verify that each table has the correct data with SELECT statements.
 ![campaign](https://github.com/omidk414/Crowdfunding_ETL/blob/main/Images/crowdfunding_db_schemata.png)
+
+
 
 ### Acknowledgements
 - Study Group Members:
