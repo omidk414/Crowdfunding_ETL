@@ -14,7 +14,6 @@ This project involves extracting and transforming data from `crowdfunding.xlsx` 
    - [Database Schema](#database-schema)
    - [Postgres Database and Table Creation](#postgres-database-and-table-creation)
 3. [Data Import](#data-import)
-4. [Acknowledgements](#acknowledgements)
 
 ## Data Extraction and Transformation
 
@@ -106,11 +105,5 @@ Create a table schema for each CSV file specifying data types, primary keys, for
 3. Verify that each table has the correct data with SELECT statements.
 ![campaign](https://github.com/omidk414/Crowdfunding_ETL/blob/main/Images/crowdfunding_db_schemata.png)
 
-
-
-### Acknowledgements
-- Study Group Members:
-  - Gursimran Kaur - kaursimran081999@gmail.com - SimranBoparai
-  - Evan Wall - ewall@escoffier.edu - Ewall24
 
 
